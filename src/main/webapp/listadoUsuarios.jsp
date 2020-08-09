@@ -27,7 +27,7 @@
                     <tr>
                         <td>${usuario.idUsuario}</td>
                         <td>${usuario.username}</td>
-                        <td>${usuario.password}</td>
+                        <td style="-webkit-text-security: disc;">${usuario.password}</td>
                         <td>${usuario.persona.idPersona} - ${usuario.persona.nombre} ${usuario.persona.apellido}</td>
                         <td>
                             <a href="${pageContext.request.contextPath}/Usuarios?accion=editar&idUsuario=${usuario.idUsuario}"
