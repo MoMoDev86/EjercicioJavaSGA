@@ -33,7 +33,9 @@ public class Usuario implements Serializable {
     private String password;
     
     @JoinColumn(name = "id_persona", referencedColumnName = "id_persona")
-    @ManyToOne(cascade = CascadeType.ALL)
+    // Quito el ALL dado que al asociar la persona al nuevo usuario, intenta insertar ambos registros
+    //@ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     
     private Persona persona;
 
