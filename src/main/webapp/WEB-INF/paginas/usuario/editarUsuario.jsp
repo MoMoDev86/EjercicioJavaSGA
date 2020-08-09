@@ -30,7 +30,7 @@
                             <option value="0">(Ninguno)</option>                            
                             <c:forEach items="${personas}" var="persona">
                                 <option value="${persona.idPersona}" accesskey=""  
-                                        <c:if test="${persona.idPersona != usuario.persona.idPersona}">selected</c:if>
+                                        <c:if test="${persona.idPersona == usuario.persona.idPersona}">selected</c:if>
                                         >${persona.nombre} ${persona.apellido} (${persona.idPersona})</option>    
                             </c:forEach>
                         </select>
