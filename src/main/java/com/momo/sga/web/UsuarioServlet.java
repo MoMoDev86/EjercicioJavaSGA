@@ -15,7 +15,7 @@ public class UsuarioServlet extends HttpServlet {
 
     @Inject
     UsuarioService usuarioService;
-    
+
     @Inject
     PersonaService personaService;
 
@@ -41,7 +41,7 @@ public class UsuarioServlet extends HttpServlet {
 
         List<Usuario> usuarios = usuarioService.listarUsuarios();
         List<Persona> personas = personaService.listarPersonas();
-        
+
         System.out.println("usuarios: " + usuarios);
         System.out.println("personas: " + personas);
 
@@ -94,7 +94,7 @@ public class UsuarioServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String id = request.getParameter("idPersona");
-        
+
         int idPersona;
 
         try {
@@ -103,15 +103,14 @@ public class UsuarioServlet extends HttpServlet {
             idPersona = 0;
         }
 
-        //Creamos el objeto de Persona (modelo)
-        Usuario usuario = new Usuario(username, password, new Persona(idPersona));
+        Usuario usuario = null;
 
         if (idPersona > 0) {
-            Persona persona = new Persona(idPersona);                    
-            persona = personaService.encontrarPersonaPorId(persona);
-            usuario.setPersona(persona);
-        }        
-        
+            usuario = new Usuario(username, password, personaService.encontrarPersonaPorId(new Persona(idPersona)));
+        } else {
+            usuario = new Usuario(username, password);
+        }
+
         //Registramos en la base
         usuarioService.registrarUsuario(usuario);
 
@@ -127,7 +126,7 @@ public class UsuarioServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String id = request.getParameter("idPersona");
-        
+
         int idPersona;
 
         try {
@@ -136,8 +135,8 @@ public class UsuarioServlet extends HttpServlet {
             idPersona = 0;
         }
 
-        Usuario usuario = new Usuario(username, password);        
-        
+        Usuario usuario = new Usuario(username, password);
+
         usuario.setIdUsuario(idUsuario);
 
         if (idPersona > 0) {

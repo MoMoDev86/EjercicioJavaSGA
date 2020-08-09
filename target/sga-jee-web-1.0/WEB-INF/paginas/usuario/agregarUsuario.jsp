@@ -18,8 +18,6 @@
             </div>  
             <div class="field">
                  <label for="idPersona">Persona</label>
-                <!--<select name="idPersona" class="ui search dropdown">
-                    -->
                 <select name="idPersona">    
                     <c:forEach items="${personas}" var="persona">
                         <option value="${persona.idPersona}">${persona.idPersona} - ${persona.nombre} ${persona.apellido}</option>    

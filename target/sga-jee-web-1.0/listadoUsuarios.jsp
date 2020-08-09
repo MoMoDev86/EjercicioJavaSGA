@@ -28,7 +28,7 @@
                         <td>${usuario.idUsuario}</td>
                         <td>${usuario.username}</td>
                         <td>${usuario.password}</td>
-                        <td>${usuario.persona.idPersona} - ${usuario.persona.nombre}</td>
+                        <td>${usuario.persona.idPersona} - ${usuario.persona.nombre} ${usuario.persona.apellido}</td>
                         <td>
                             <a href="${pageContext.request.contextPath}/Usuarios?accion=editar&idUsuario=${usuario.idUsuario}"
                                class="ui labeled icon basic button">
