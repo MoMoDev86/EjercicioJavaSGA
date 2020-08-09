@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
         <title>Editar Usuario</title>
@@ -25,7 +26,14 @@
                     </div>  
                     <div class="field">
                         <label for="idPersona">Persona</label>
-                        <input type="number" name="idPersona" placeholder="código de persona" autofocus value="${usuario.persona.idPersona}">
+                        <select name="idPersona" class="ui search dropdown">                            
+                            <option value="0">(Ninguno)</option>                            
+                            <c:forEach items="${personas}" var="persona">
+                                <option value="${persona.idPersona}" accesskey=""  
+                                        <c:if test="${persona.idPersona != usuario.persona.idPersona}">selected</c:if>
+                                        >${persona.nombre} ${persona.apellido} (${persona.idPersona})</option>    
+                            </c:forEach>
+                        </select>
                     </div>
                     <div class="ui container">
                         <jsp:include page="/WEB-INF/paginas/usuario/navEditarUsuario.jsp" />
@@ -34,3 +42,6 @@
         </div>
     </body>
 </html>
+<script type="text/javascript">
+    $('.ui.dropdown').dropdown();
+</script>
