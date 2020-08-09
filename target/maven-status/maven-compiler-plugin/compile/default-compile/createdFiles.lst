@@ -1,0 +1,13 @@
+com\momo\sga\datos\UsuarioDao.class
+com\momo\sga\domain\Usuario.class
+com\momo\sga\servicio\UsuarioService.class
+com\momo\sga\domain\Persona.class
+com\momo\sga\servicio\PersonaService.class
+com\momo\sga\web\PersonaServlet.class
+com\momo\sga\web\UsuarioServlet.class
+com\momo\sga\servicio\PersonaServiceRemote.class
+com\momo\sga\datos\UsuarioDaoImpl.class
+com\momo\sga\servicio\PersonaServiceImpl.class
+com\momo\sga\servicio\UsuarioServiceImpl.class
+com\momo\sga\datos\PersonaDaoImpl.class
+com\momo\sga\datos\PersonaDao.class
